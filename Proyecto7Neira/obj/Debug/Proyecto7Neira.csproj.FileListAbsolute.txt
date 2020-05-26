@@ -2,9 +2,9 @@ C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\bin\Debu
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\bin\Debug\Proyecto7Neira.exe
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\bin\Debug\Proyecto7Neira.pdb
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.csprojAssemblyReference.cache
-C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.Form1.resources
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.Properties.Resources.resources
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.csproj.GenerateResource.cache
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.csproj.CoreCompileInputs.cache
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.exe
 C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.pdb
+C:\Users\Cristobal\Desktop\laboratorio-07-cristobalneira\Proyecto7Neira\obj\Debug\Proyecto7Neira.Calculadora.resources

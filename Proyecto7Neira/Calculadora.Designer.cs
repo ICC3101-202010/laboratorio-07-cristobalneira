@@ -1,6 +1,6 @@
 ﻿namespace Proyecto7Neira
 {
-    partial class Form1
+    partial class Calculadora
     {
         /// <summary>
         /// Required designer variable.
@@ -157,7 +157,7 @@
             this.botonANS.TabIndex = 15;
             this.botonANS.Text = "ANS";
             this.botonANS.UseVisualStyleBackColor = false;
-            this.botonANS.Click += new System.EventHandler(this.button9_Click);
+            this.botonANS.Click += new System.EventHandler(this.botonANS_Click);
             // 
             // boton3
             // 
@@ -217,7 +217,7 @@
             this.botonIGUAL.TabIndex = 10;
             this.botonIGUAL.Text = "=";
             this.botonIGUAL.UseVisualStyleBackColor = false;
-            this.botonIGUAL.Click += new System.EventHandler(this.button14_Click);
+            this.botonIGUAL.Click += new System.EventHandler(this.botonigual_Click);
             // 
             // botonX
             // 
@@ -289,22 +289,25 @@
             this.botonAC.TabIndex = 16;
             this.botonAC.Text = "AC";
             this.botonAC.UseVisualStyleBackColor = false;
-            this.botonAC.Click += new System.EventHandler(this.button20_Click);
+            this.botonAC.Click += new System.EventHandler(this.botonAC_Click);
             // 
             // textbox
             // 
-            this.textbox.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox.Location = new System.Drawing.Point(69, 39);
+            this.textbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textbox.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox.Location = new System.Drawing.Point(69, 26);
             this.textbox.Name = "textbox";
             this.textbox.ReadOnly = true;
-            this.textbox.Size = new System.Drawing.Size(439, 21);
+            this.textbox.Size = new System.Drawing.Size(439, 42);
             this.textbox.TabIndex = 20;
+            this.textbox.TextChanged += new System.EventHandler(this.textbox_TextChanged);
             // 
-            // Form1
+            // Calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 429);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(951, 429);
             this.Controls.Add(this.textbox);
             this.Controls.Add(this.botonMEN);
             this.Controls.Add(this.botonHISTORY);
@@ -326,8 +329,9 @@
             this.Controls.Add(this.boton0);
             this.Controls.Add(this.boton4);
             this.Controls.Add(this.boton7);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Calculadora";
+            this.Text = "Calculadora Digital";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
