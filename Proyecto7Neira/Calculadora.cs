@@ -4,14 +4,18 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proyecto7Neira
 {
+
     public partial class Calculadora : Form
     {
+        
         double primero;
         double segundo;
         string operador;
@@ -21,14 +25,15 @@ namespace Proyecto7Neira
             InitializeComponent();
         }
         double result;
-        List<string> historial = new List<string>();
+        public List<string> historial = new List<string>();
+        public List<string> historialenlista = new List<string>();
 
         Clases.Suma suma1 = new Clases.Suma();
         Clases.Resta resta2 = new Clases.Resta();
         Clases.Multiplicacion multiplicador3 = new Clases.Multiplicacion();
         Clases.Division division4 = new Clases.Division();
 
-
+        
         private void boton8_Click(object sender, EventArgs e)
         {
             textbox.Text = textbox.Text + "8";
@@ -54,27 +59,49 @@ namespace Proyecto7Neira
             textbox.Text = textbox.Text + ".";
         }
         //HIST
+        int h = 0;
         private void botonHist_Click(object sender, EventArgs e)
         {
-            int c = 1;
-            foreach (var item in historial)
+            
+            if (h % 2 == 0) 
             {
-                //textBox1.Text = c+". "+item;
-                c += 1;
+                Reset.Show();
+                listBox1.Show();
+                int numeros = 1;
+                foreach (var item in historial)
+                {
+                    
+                    string operacion = numeros.ToString() + ". " + item;
+                    listBox1.Items.Add(operacion);
+                    historialenlista.Add(operacion);
+                    numeros += 1;
+                }
             }
+            else 
+            {
+                foreach (var item in historialenlista)
+                {
+                    listBox1.Items.Remove(item);     
+                }
+                listBox1.Hide();
+                Reset.Hide();
+            }
+            h += 1;
         }
 
         private void botonRes_Click(object sender, EventArgs e)
         {
             operador = "-";
-            primero = double.Parse(textbox.Text);
+            try { primero = double.Parse(textbox.Text); }
+            catch (System.FormatException) { textbox.Text = "Syntax Error"; };
             textbox.Clear();
         }
         //div
         private void botondiv_Click(object sender, EventArgs e)
         {
             operador = "/";
-            primero = double.Parse(textbox.Text);
+            try { primero = double.Parse(textbox.Text); }
+            catch (System.FormatException) { textbox.Text = "Syntax Error"; }
             textbox.Clear();
         }
         //AC
@@ -108,7 +135,8 @@ namespace Proyecto7Neira
         private void botonMAS_Click(object sender, EventArgs e)
         {
             operador = "+";
-            primero = double.Parse(textbox.Text);
+            try { primero = double.Parse(textbox.Text); }
+            catch (System.FormatException) { textbox.Text = "Syntax Error"; }
             textbox.Clear();
         }
         //=
@@ -159,22 +187,29 @@ namespace Proyecto7Neira
             }
             catch (System.FormatException ep)
             {
-                textbox.Text = "Syntax ERROR";
+                if(primero == 0) { textbox.Text = "0"; }
+                else { textbox.Text = "Syntax ERROR"; }
+                
             }
         }
         private void botonx_Click(object sender, EventArgs e)
         {
             operador = "x";
-            primero = double.Parse(textbox.Text);
+            try { primero = double.Parse(textbox.Text); }
+            catch (System.FormatException) {textbox.Text = "Syntax Error";}
             textbox.Clear();
+
         }
         //DEL
         private void botonDEL_Click(object sender, EventArgs e)
-        {
+        { 
             if (textbox.Text.Length == 1)
                 textbox.Text = "";
             else
-                textbox.Text = textbox.Text.Substring(0, textbox.Text.Length - 1);
+                try { textbox.Text = textbox.Text.Substring(0, textbox.Text.Length - 1); }
+                catch (System.ArgumentOutOfRangeException ep) { }
+
+            
         }
 
         private void boton1_Click(object sender, EventArgs e)
@@ -203,6 +238,29 @@ namespace Proyecto7Neira
         }
 
         private void textboxhist_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        int r = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach (var item in historialenlista)
+            {
+                listBox1.Items.Remove(item);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
